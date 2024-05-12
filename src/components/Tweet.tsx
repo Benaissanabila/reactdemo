@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface TweetProps {
+export interface TweetProps {
     id: number;
     name: string;
     content: string;

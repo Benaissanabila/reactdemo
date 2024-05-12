@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Tweet } from "./components/Tweet";
+import {Tweet, TweetProps} from "./components/Tweet";
 import { TweetForm } from "./components/TweetForm";
 
 const DefaultTweet = [
@@ -13,15 +13,24 @@ const DefaultTweet = [
 ];
 
 function App() {
-    const [tweets, setTweets] = useState(DefaultTweet);
+    const [tweets, setTweets] = useState(() => {
+        const savedTweetsJSON = localStorage.getItem('tweets');
+        return savedTweetsJSON ? JSON.parse(savedTweetsJSON) : DefaultTweet;
+    });
+
+    useEffect(() => {
+        localStorage.setItem('tweets', JSON.stringify(tweets));
+    }, [tweets]);
+
+
 
     const handleDelete = (id:number) => {
-        const updatedTweets = tweets.filter(tweet => tweet.id !== id);
+        const updatedTweets = tweets.filter((tweet:TweetProps) => tweet.id !== id);
         setTweets(updatedTweets);
     };
 
     const onLike = (tweetId:number) => {
-        const likedTweet = tweets.find(tweet => tweet.id === tweetId);
+        const likedTweet = tweets.find((tweet:TweetProps)=> tweet.id === tweetId);
         if (likedTweet) {
             likedTweet.like += 1;
             setTweets([...tweets]);
@@ -38,7 +47,7 @@ function App() {
         setTweets([...tweets, tweet]);
     };
 
-    const tweetList = tweets.map((tweet) => {
+    const tweetList = tweets.map((tweet:TweetProps) => {
         return (
             <div key={tweet.id}>
                 <Tweet
@@ -64,4 +73,7 @@ function App() {
 }
 
 export default App;
+
+
+
 
