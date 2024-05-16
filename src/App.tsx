@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Tweet, TweetProps} from "./components/Tweet";
 import { TweetForm } from "./components/TweetForm";
+import styled from 'styled-components';
 
 const DefaultTweet = [
     { id: 0, name: 'Melvyn', content: 'Je vais bien', like: 200 },
@@ -19,6 +20,7 @@ function App() {
     });
 
     useEffect(() => {
+        console.log("test")
         localStorage.setItem('tweets', JSON.stringify(tweets));
     }, [tweets]);
 
@@ -47,6 +49,7 @@ function App() {
         setTweets([...tweets, tweet]);
     };
 
+
     const tweetList = tweets.map((tweet:TweetProps) => {
         return (
             <div key={tweet.id}>
@@ -66,7 +69,9 @@ function App() {
         <div>
             <TweetForm handleSubmit={handleSubmit}/>
             <div className={"tweet-container"}>
+                <TweetContainer>
                 {tweetList}
+                </TweetContainer>
             </div>
         </div>
     );
@@ -74,6 +79,11 @@ function App() {
 
 export default App;
 
+const TweetContainer=styled.div`
+    display:flex;
+    flex-wrap: wrap;
+    gap: 16px;
 
+`
 
 

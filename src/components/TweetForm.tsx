@@ -1,4 +1,5 @@
 import React from "react";
+import styled from 'styled-components';
 interface TweetFormProps{
     handleSubmit: (newTweet: { name: string; content: string; like: number }) => void;
 }
@@ -18,11 +19,19 @@ export function TweetForm({ handleSubmit }: TweetFormProps) {
     }
 
     return (
-        <form onSubmit={handleFormSubmit} className={"tweet-form"}>
+        <TweetStyledForm onSubmit={handleFormSubmit} className={"tweet-form"}>
             <h4>New tweet</h4>
-            <input placeholder="name" type="text" name="name"/>
-            <input placeholder="content" type="text" name="content"/>
-            <input type="submit"/>
-        </form>
+            <input placeholder="name" type="text" name="name" />
+            <input placeholder="content" type="text" name="content" />
+            <input type="submit" />
+        </TweetStyledForm>
     );
 }
+
+const TweetStyledForm = styled.form`
+    display:flex;
+    flex-direction: column ;
+    width: fit-content;
+    gap: 8px;
+    margin-bottom: 32px;
+`;
