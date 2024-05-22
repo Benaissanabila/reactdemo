@@ -1,0 +1,18 @@
+{
+  "dev": {
+    "awscloudformation": {}
+  },
+  "devnabila": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactdemo-devnabila-4ab2e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730335385340:role/amplify-reactdemo-devnabila-4ab2e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730335385340:role/amplify-reactdemo-devnabila-4ab2e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactdemo-devnabila-4ab2e-deployment",
+      "UnauthRoleName": "amplify-reactdemo-devnabila-4ab2e-unauthRole",
+      "StackName": "amplify-reactdemo-devnabila-4ab2e",
+      "StackId": "arn:aws:cloudformation:us-east-1:730335385340:stack/amplify-reactdemo-devnabila-4ab2e/7cba19b0-17e7-11ef-bd92-122654ec0681",
+      "AmplifyAppId": "drhv19nv8j0w5"
+    }
+  }
+}
