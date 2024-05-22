@@ -1,4 +1,22 @@
 {
+  "nabila": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactdemo-nabila-9da00-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730335385340:role/amplify-reactdemo-nabila-9da00-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730335385340:role/amplify-reactdemo-nabila-9da00-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactdemo-nabila-9da00-deployment",
+      "UnauthRoleName": "amplify-reactdemo-nabila-9da00-unauthRole",
+      "StackName": "amplify-reactdemo-nabila-9da00",
+      "StackId": "arn:aws:cloudformation:us-east-1:730335385340:stack/amplify-reactdemo-nabila-9da00/84a0dbf0-17ec-11ef-8334-12873efecb1b",
+      "AmplifyAppId": "drhv19nv8j0w5"
+    },
+    "categories": {
+      "auth": {
+        "reactdemo772bd555": {}
+      }
+    }
+  },
   "devnabila": {
     "awscloudformation": {
       "AuthRoleName": "amplify-reactdemo-devnabila-4ab2e-authRole",
@@ -28,19 +46,6 @@
       "function": {
         "tweet": {}
       }
-    }
-  },
-  "nabila": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-reactdemo-nabila-9da00-authRole",
-      "UnauthRoleArn": "arn:aws:iam::730335385340:role/amplify-reactdemo-nabila-9da00-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::730335385340:role/amplify-reactdemo-nabila-9da00-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-reactdemo-nabila-9da00-deployment",
-      "UnauthRoleName": "amplify-reactdemo-nabila-9da00-unauthRole",
-      "StackName": "amplify-reactdemo-nabila-9da00",
-      "StackId": "arn:aws:cloudformation:us-east-1:730335385340:stack/amplify-reactdemo-nabila-9da00/84a0dbf0-17ec-11ef-8334-12873efecb1b",
-      "AmplifyAppId": "drhv19nv8j0w5"
     }
   }
 }

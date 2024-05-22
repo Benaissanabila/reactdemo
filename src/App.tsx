@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {Tweet, TweetProps} from "./components/Tweet";
+import { Tweet, TweetProps } from "./components/Tweet";
 import { TweetForm } from "./components/TweetForm";
 import styled from 'styled-components';
+import {Authenticator} from "@aws-amplify/ui-react";
+import '@aws-amplify/ui-react/styles.css';
+import config from './amplifyconfiguration.json';
+import {Amplify} from "aws-amplify";
+Amplify.configure(config);
+
 
 const DefaultTweet = [
     { id: 0, name: 'Melvyn', content: 'Je vais bien', like: 200 },
@@ -67,12 +72,14 @@ function App() {
 
     return (
         <div>
+            <Authenticator>
             <TweetForm handleSubmit={handleSubmit}/>
             <div className={"tweet-container"}>
                 <TweetContainer>
                 {tweetList}
                 </TweetContainer>
             </div>
+            </Authenticator>
         </div>
     );
 }
